@@ -225,7 +225,7 @@ export default class SwitchSelector extends Component {
                           }),
                         },
                       ],
-                      marginTop: hasPadding ? valuePadding : 0
+                      marginTop: hasPadding ? valuePadding : 0,
                       borderRadius
                     },
                     styles.animated,
