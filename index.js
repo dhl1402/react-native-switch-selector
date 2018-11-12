@@ -210,7 +210,7 @@ export default class SwitchSelector extends Component {
                     {
                       height: hasPadding ? height - 2 - (valuePadding * 2) : height,
                       backgroundColor: this.getBgColor(),
-                      width: this.state.sliderWidth / this.props.options.length,
+                      width: (this.state.sliderWidth - (hasPadding ? valuePadding : 0)) / this.props.options.length,
                       transform: [
                         {
                           translateX: this.animatedValue.interpolate({
