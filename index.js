@@ -137,7 +137,7 @@ export default class SwitchSelector extends Component {
       valuePadding,
       height,
       bold,
-
+      borderRadius,
     } = this.props;
 
     const options = this.props.options.map((element, index) => (
@@ -225,7 +225,7 @@ export default class SwitchSelector extends Component {
                           }),
                         },
                       ],
-                      marginTop: hasPadding ? valuePadding : 0,
+                      marginTop: hasPadding ? valuePadding : 0
                       borderRadius
                     },
                     styles.animated,
