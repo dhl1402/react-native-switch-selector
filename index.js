@@ -30,7 +30,7 @@ const styles = {
 };
 
 export default class SwitchSelector extends Component {
-  constructor (props) {
+  constructor(props) {
     super(props);
     this.state = {
       selected: this.props.initial ? this.props.initial : 0
@@ -44,7 +44,7 @@ export default class SwitchSelector extends Component {
     );
   }
 
-  componentWillMount () {
+  componentWillMount() {
     this._panResponder = PanResponder.create({
       onStartShouldSetPanResponder: this.shouldSetResponder,
       onMoveShouldSetPanResponder: this.shouldSetResponder,
@@ -53,7 +53,7 @@ export default class SwitchSelector extends Component {
     });
   }
 
-  componentWillReceiveProps (nextProps) {
+  componentWillReceiveProps(nextProps) {
     if (nextProps.value !== this.props.value) {
       this.toggleItem(nextProps.value);
     }
@@ -78,7 +78,7 @@ export default class SwitchSelector extends Component {
     }
   };
 
-  _getSwipeDirection (gestureState) {
+  _getSwipeDirection(gestureState) {
     const { dx, dy, vx } = gestureState;
     // 0.1 velocity
     if (Math.abs(vx) > 0.1 && Math.abs(dy) < 80) {
@@ -87,7 +87,7 @@ export default class SwitchSelector extends Component {
     return null;
   }
 
-  getBgColor () {
+  getBgColor() {
     const { selected } = this.state;
     const { options, buttonColor } = this.props;
     return options[selected].activeColor || buttonColor;
@@ -122,7 +122,7 @@ export default class SwitchSelector extends Component {
     this.setState({ selected: index });
   };
 
-  render () {
+  render() {
     const {
       style,
       textStyle,
@@ -208,7 +208,7 @@ export default class SwitchSelector extends Component {
                 <Animated.View
                   style={[
                     {
-                      height: hasPadding ? height - 4 : height,
+                      height: hasPadding ? height - (valuePadding * 2) : height,
                       backgroundColor: this.getBgColor(),
                       width: this.state.sliderWidth /
                         this.props.options.length -
