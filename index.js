@@ -208,11 +208,9 @@ export default class SwitchSelector extends Component {
                 <Animated.View
                   style={[
                     {
-                      height: hasPadding ? height - (valuePadding * 2) : height,
+                      height: hasPadding ? height - 2 - (valuePadding * 2) : height,
                       backgroundColor: this.getBgColor(),
-                      width: this.state.sliderWidth /
-                        this.props.options.length -
-                        (hasPadding ? valuePadding : 0),
+                      width: this.state.sliderWidth / this.props.options.length,
                       transform: [
                         {
                           translateX: this.animatedValue.interpolate({
